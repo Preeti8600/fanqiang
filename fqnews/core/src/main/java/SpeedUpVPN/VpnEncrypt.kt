@@ -60,7 +60,11 @@ private object AES256{
 
         return encstr
     }
+    fun function(array: Array<Int>) { }
+
+	fun returningFunction(): Array<Double> { }
     fun decrypt(str:String, secretKey:String):String{
+        
         val byteStr : ByteArray
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O || isWindows())
             byteStr=java.util.Base64.getDecoder().decode(str.toByteArray(Charsets.UTF_8))
@@ -69,6 +73,9 @@ private object AES256{
 
         return String(cipher(Cipher.DECRYPT_MODE, secretKey).doFinal(byteStr))
     }
+    suspend fun foo() {
+    		Thread.sleep(1_000L)
+	}
     fun isWindows(): Boolean {
         var os= System.getProperty("os.name")
         if(os.isNullOrEmpty())
