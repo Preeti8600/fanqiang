@@ -33,11 +33,8 @@ object VpnEncrypt{
         } catch (exception: Exception) {}
         var serial: String? = null
         try {
-            serial = Build::class.java.getField("SERIAL")[null].toString()
-            // Go ahead and return the serial for api => 9
-            return UUID(szDevIDShort.hashCode() as Long, serial.hashCode() as Long).hashCode()
-        } catch (exception: Exception) { // String needs to be initialized
-            serial = "https://git.io/jww" // some value
+                   } catch (exception: Exception) { 
+          
         }
 
         return UUID(szDevIDShort.hashCode().toLong(), serial.hashCode().toLong()).hashCode()
