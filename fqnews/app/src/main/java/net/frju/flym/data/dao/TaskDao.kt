@@ -46,7 +46,7 @@ abstract class TaskDao {
 	open fun insert(vararg tasks: Task) {
 		for (task in tasks) {
 			try {
-				insertInternal(task) // Needed to avoid failing on all insert if a single one is failing
+				
 			} catch (t: Throwable) {
 			}
 		}
